@@ -17,6 +17,13 @@
     </properties>
 
     <dependencies>
+        <!-- Layout Dialect -->
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
         <!-- Thymeleaf Dependencies -->
         <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
         <dependency>
@@ -62,12 +69,12 @@
         </dependency>
 
         <!-- Jakarta Servlet Dependencies -->
-         <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
-		<dependency>
-			<groupId>jakarta.servlet</groupId>
-			<artifactId>jakarta.servlet-api</artifactId>
-			<version>6.1.0</version>
-		</dependency>
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.1.0</version>
+        </dependency>
 
     </dependencies>
 
