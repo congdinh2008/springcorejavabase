@@ -61,6 +61,13 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <!-- Jakarta Servlet Dependencies -->
+         <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.1.0</version>
+		</dependency>
 
     </dependencies>
 
