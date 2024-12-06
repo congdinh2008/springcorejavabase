@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{shared/managerLayout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Management</title>
+</head>
+
+<body>
+    <section layout:fragment="content" class="management w-full p-4">
+        <h1>Category Management</h1>
+        <table class="w-full">
+            <thead>
+                <tr class="*:p-3 *:border *:border-slate-300">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="category : ${categories}" class="*:p-3 *:border *:border-slate-300">
+                    <td th:text="${category.id}"></td>
+                    <td th:text="${category.name}"></td>
+                    <td th:text="${category.description}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>
