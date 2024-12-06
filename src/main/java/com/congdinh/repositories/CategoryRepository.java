@@ -10,7 +10,9 @@ import com.congdinh.entities.Category;
 
 import jakarta.transaction.Transactional;
 
+// Register this class as a Spring bean
 @Repository
+// Enable transaction management
 @Transactional
 public class CategoryRepository implements ICategoryRepository {
 

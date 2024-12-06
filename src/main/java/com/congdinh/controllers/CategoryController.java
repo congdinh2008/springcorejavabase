@@ -13,9 +13,11 @@ public class CategoryController {
 
     private final ICategoryRepository categoryRepository;
 
+    // Dependency injection by constructor
     public CategoryController(ICategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
+    
     @GetMapping
     public String index(Model model) {
         var categories = categoryRepository.findAll();
