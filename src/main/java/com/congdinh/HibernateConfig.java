@@ -16,23 +16,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = "com.congdinh")
 public class HibernateConfig {
     @Bean
-    public LocalSessionFactoryBean sessionFactory() {
-        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean(); // IoC
-        sessionFactory.setDataSource(dataSource()); // DI
-        sessionFactory.setPackagesToScan("com.congdinh.entities");
-        sessionFactory.setHibernateProperties(hibernateProperties());
-        return sessionFactory;
-    }
-
-    private final Properties hibernateProperties() {
-        Properties hibernateProperties = new Properties();
-        hibernateProperties.setProperty("hibernate.show_sql", "true");
-        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create"); // Using only for the first time -
-                                                                             // Development
-        return hibernateProperties;
-    }
-
-    @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();// IoC
         dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -41,6 +24,22 @@ public class HibernateConfig {
         dataSource.setUsername("sa");
         dataSource.setPassword("abcd@1234");
         return dataSource;
+    }
+
+    @Bean
+    public LocalSessionFactoryBean sessionFactory() {
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean(); // IoC
+        sessionFactory.setDataSource(dataSource()); // DI
+        sessionFactory.setPackagesToScan("com.congdinh.entities"); // Set package to scan for entities
+        sessionFactory.setHibernateProperties(hibernateProperties());
+        return sessionFactory;
+    }
+
+    private final Properties hibernateProperties() {
+        Properties hibernateProperties = new Properties();
+        hibernateProperties.setProperty("hibernate.show_sql", "true");
+        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
+        return hibernateProperties;
     }
 
     @Bean
